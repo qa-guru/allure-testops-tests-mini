@@ -1,28 +1,13 @@
-package tests;
+package tests.testcase;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import helpers.CustomApiListener;
-import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
-import io.restassured.http.Cookies;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static api.AuthorizationApi.getAllureTestopsSession;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class TestCaseTests {
-
-    @BeforeAll
-    static void configure() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-        Configuration.baseUrl = "https://allure.autotests.cloud";
-        RestAssured.baseURI = "https://allure.autotests.cloud/api";
-        RestAssured.filters(CustomApiListener.withCustomTemplates());
-    }
+public class ViewTestCaseTests extends TestBase {
 
     @Test
     void viewTestCase() {
