@@ -1,6 +1,6 @@
 package models.lombok;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
 public class TestCaseTreeLeafResponseBodyLombok {

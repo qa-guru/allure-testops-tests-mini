@@ -1,0 +1,91 @@
+{
+  "id": 10795,
+  "projectId": 1411,
+  "name": "Alabama monkeys",
+  "deleted": false,
+  "editable": true,
+  "automated": false,
+  "style": "regular",
+  "tags": [],
+  "parameters": [],
+  "examples": [],
+  "links": [],
+  "mutes": [],
+  "customFields": [],
+  "testKeys": [],
+  "issues": [],
+  "members": [
+    {
+      "id": 157,
+      "name": "allure8",
+      "role": {
+        "id": -1,
+        "name": "Owner",
+        "createdDate": 1586525578224,
+        "lastModifiedDate": 1586525578224,
+        "createdBy": "system",
+        "lastModifiedBy": "system"
+      }
+    }
+  ],
+  "relations": [],
+  "status": {
+    "id": -1,
+    "name": "Draft",
+    "color": "#abb8c3",
+    "createdDate": 1586525578236,
+    "lastModifiedDate": 1586525578236,
+    "createdBy": "system",
+    "lastModifiedBy": "system"
+  },
+  "workflow": {
+    "id": -1,
+    "name": "Default Manual",
+    "statuses": [
+      {
+        "id": -1,
+        "name": "Draft",
+        "color": "#abb8c3",
+        "createdDate": 1586525578236,
+        "lastModifiedDate": 1586525578236,
+        "createdBy": "system",
+        "lastModifiedBy": "system"
+      },
+      {
+        "id": -2,
+        "name": "Review",
+        "color": "#6f42c1",
+        "createdDate": 1586525578244,
+        "lastModifiedDate": 1586525578244,
+        "createdBy": "system",
+        "lastModifiedBy": "system"
+      },
+      {
+        "id": -3,
+        "name": "Active",
+        "color": "#2cbe4e",
+        "createdDate": 1586525578251,
+        "lastModifiedDate": 1586525578251,
+        "createdBy": "system",
+        "lastModifiedBy": "system"
+      },
+      {
+        "id": -4,
+        "name": "Outdated",
+        "color": "#abb8c3",
+        "createdDate": 1586525578259,
+        "lastModifiedDate": 1586525578259,
+        "createdBy": "system",
+        "lastModifiedBy": "system"
+      }
+    ],
+    "createdDate": 1586525578284,
+    "lastModifiedDate": 1586525578284,
+    "createdBy": "system",
+    "lastModifiedBy": "system"
+  },
+  "createdDate": 1656445762973,
+  "lastModifiedDate": 1656445762973,
+  "createdBy": "allure8",
+  "lastModifiedBy": "allure8"
+}

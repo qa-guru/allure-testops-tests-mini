@@ -1,0 +1,71 @@
+{
+  "id": 0,
+  "projectId": 0,
+  "name": "string",
+  "fullName": "string",
+  "description": "string",
+  "descriptionHtml": "string",
+  "precondition": "string",
+  "preconditionHtml": "string",
+  "expectedResult": "string",
+  "expectedResultHtml": "string",
+  "hash": "string",
+  "deleted": true,
+  "editable": true,
+  "automated": true,
+  "external": true,
+  "style": "regular",
+  "layer": {
+    "id": 0,
+    "name": "string",
+    "createdDate": 0,
+    "lastModifiedDate": 0,
+    "createdBy": "string",
+    "lastModifiedBy": "string"
+  },
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "links": [
+    {
+      "name": "string",
+      "url": "string",
+      "type": "string"
+    }
+  ],
+  "status": {
+    "id": 0,
+    "name": "string",
+    "color": "string",
+    "createdDate": 0,
+    "lastModifiedDate": 0,
+    "createdBy": "string",
+    "lastModifiedBy": "string"
+  },
+  "workflow": {
+    "id": 0,
+    "name": "string",
+    "statuses": [
+      {
+        "id": 0,
+        "name": "string",
+        "color": "string",
+        "createdDate": 0,
+        "lastModifiedDate": 0,
+        "createdBy": "string",
+        "lastModifiedBy": "string"
+      }
+    ],
+    "createdDate": 0,
+    "lastModifiedDate": 0,
+    "createdBy": "string",
+    "lastModifiedBy": "string"
+  },
+  "createdDate": 0,
+  "lastModifiedDate": 0,
+  "createdBy": "string",
+  "lastModifiedBy": "string"
+}

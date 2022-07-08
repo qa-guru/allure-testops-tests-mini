@@ -1,10 +1,14 @@
 package tests.testcase;
 
 import com.github.javafaker.Faker;
+import models.lombok.testcase.create.request.CreateTestCaseRequestBody;
 import models.lombok.TestCaseTreeLeafRequestBodyLombok;
 import models.lombok.TestCaseTreeLeafResponseBodyLombok;
+import models.lombok.testcase.create.request.Status;
+import models.lombok.testcase.create.response.CreateTestCaseResponseBody;
 import models.pojo.TestCaseTreeLeafRequestBodyPojo;
 import models.pojo.TestCaseTreeLeafResponseBodyPojo;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
@@ -19,13 +23,18 @@ import static specs.Specs.createTestCaseResponseSpec;
 
 public class CreateTestCaseTests extends TestBase {
 
+    Faker faker = new Faker();
+    String testName;
+
     static final String PROJECT_ID = "1411";
 
-    @Test
-    void createTestCase() {
-        Faker faker = new Faker();
+    @BeforeEach
+    void setUpTestData() {
+        testName = faker.team().name();
+    }
 
-        String testName = faker.team().name();
+    @Test
+    void createTestCaseLeaf() {
         String body = "{\"name\":\"" + testName + "\"}";
 
         given()
@@ -45,12 +54,8 @@ public class CreateTestCaseTests extends TestBase {
                 .body("automated", is(false));
     }
 
-
     @Test
     void createTestCaseWithPojoModels() {
-        Faker faker = new Faker();
-        String testName = faker.team().name();
-
         TestCaseTreeLeafRequestBodyPojo body = new TestCaseTreeLeafRequestBodyPojo();
         body.setName(testName);
 
@@ -75,9 +80,6 @@ public class CreateTestCaseTests extends TestBase {
 
     @Test
     void createTestCaseWithLombokModels() {
-        Faker faker = new Faker();
-        String testName = faker.team().name();
-
         TestCaseTreeLeafRequestBodyLombok body = new TestCaseTreeLeafRequestBodyLombok();
         body.setName(testName);
 
@@ -96,15 +98,14 @@ public class CreateTestCaseTests extends TestBase {
                 .statusCode(200)
                 .extract().as(TestCaseTreeLeafResponseBodyLombok.class);
 
+        response.setAutomated(true);
+
         assertEquals(testName, response.getName());
         assertEquals(false, response.getAutomated());
     }
 
     @Test
     void createTestCaseWithSpecs() {
-        Faker faker = new Faker();
-        String testName = faker.team().name();
-
         TestCaseTreeLeafRequestBodyLombok body = new TestCaseTreeLeafRequestBodyLombok();
         body.setName(testName);
 
@@ -122,5 +123,31 @@ public class CreateTestCaseTests extends TestBase {
         assertEquals(testName, response.getName());
         assertEquals(false, response.getAutomated());
     }
+
+    @Test
+    void createTestCase() {
+        CreateTestCaseRequestBody body = new CreateTestCaseRequestBody();
+        body.setProjectId(PROJECT_ID);
+        body.setName(testName);
+
+        Status status = new Status();
+        status.setId(-1);
+        status.setName("Draft");
+
+        body.setStatus(status);
+
+        CreateTestCaseResponseBody response = given()
+                .spec(createTestCaseRequestSpec)
+                .body(body.toString())
+                .when()
+                .post("/testcase")
+                .then()
+                .spec(createTestCaseResponseSpec)
+                .log().all()
+                .extract().as(CreateTestCaseResponseBody.class);
+
+        assertEquals(testName, response.getName());
+    }
+
 
 }

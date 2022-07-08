@@ -1,8 +1,5 @@
 package models.pojo;
 
-import lombok.Data;
-
-@Data
 public class TestCaseTreeLeafRequestBodyPojo {
     private String name;
 

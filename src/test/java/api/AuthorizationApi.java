@@ -8,7 +8,6 @@ public class AuthorizationApi {
             XSRF_TOKEN = "95a50912-56ff-4573-8b6f-e3e7f35460c4";
 
     public static String getAllureTestopsSession() {
-
         return given()
                 .header("X-XSRF-TOKEN", XSRF_TOKEN)
                 .cookie("XSRF-TOKEN", XSRF_TOKEN)
