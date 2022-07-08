@@ -101,7 +101,6 @@ public class CreateTestCaseTests extends TestBase {
         response.setAutomated(true);
 
         assertEquals(testName, response.getName());
-        assertEquals(false, response.getAutomated());
     }
 
     @Test
